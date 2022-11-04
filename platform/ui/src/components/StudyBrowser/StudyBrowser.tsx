@@ -42,8 +42,11 @@ const StudyBrowser = ({
         numInstances,
         modalities,
         displaySets,
+        curieStudyId,
       }) => {
-        const isExpanded = expandedStudyInstanceUIDs.includes(studyInstanceUid);
+        const isExpanded =
+          expandedStudyInstanceUIDs.includes(studyInstanceUid) ||
+          expandedStudyInstanceUIDs.includes(curieStudyId);
         return (
           <React.Fragment key={studyInstanceUid}>
             <StudyItem
