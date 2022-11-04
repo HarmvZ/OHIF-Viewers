@@ -26,11 +26,17 @@ function Header({ children, menuOptions, isReturnEnabled, onClickReturnButton, i
           {/* // TODO: Should preserve filter/sort
               // Either injected service? Or context (like react router's `useLocation`?) */}
           <div
-            className={classNames("inline-flex items-center mr-3", isReturnEnabled && 'cursor-pointer')}
-            onClick={onClickReturn}
+            className={classNames(
+              'inline-flex items-center mr-3'
+              // isReturnEnabled && 'cursor-pointer'
+            )}
+            // onClick={onClickReturn}
           >
-            {isReturnEnabled && <Icon name="chevron-left" className="w-8 text-primary-active" />}
-            <div className="ml-4">{WhiteLabeling ? CustomLogo(React) : <Svg name="logo-ohif" />}</div>
+            {/* {isReturnEnabled && <Icon name="chevron-left" className="w-8 text-primary-active" />} */}
+            {/* <div className="ml-4"> */}
+            <div>
+              {WhiteLabeling ? CustomLogo(React) : <Svg name="logo-ohif" />}
+            </div>
           </div>
         </div>
         <div className="flex items-center">{children}</div>
