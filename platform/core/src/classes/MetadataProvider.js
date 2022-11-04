@@ -423,14 +423,27 @@ class MetadataProvider {
       imageId.startsWith('wadors:') ||
       imageId.startsWith('streaming-wadors:')
     ) {
+      // const strippedImageId = imageId.split('/studies/')[1];
+      // const splitImageId = strippedImageId.split('/');
+
+      // return  {
+      //   StudyInstanceUID: splitImageId[0], // Note: splitImageId[1] === 'series'
+      //   SeriesInstanceUID: splitImageId[2], // Note: splitImageId[3] === 'instances'
+      //   SOPInstanceUID: splitImageId[4],
+      //   frameNumber: splitImageId[6],
+      // };
+
+      // custom uid stripping
       const strippedImageId = imageId.split('/studies/')[1];
       const splitImageId = strippedImageId.split('/');
 
+      const qs = queryString.parse(imageId);
+
       return {
-        StudyInstanceUID: splitImageId[0], // Note: splitImageId[1] === 'series'
+        StudyInstanceUID: qs.studyUID,
         SeriesInstanceUID: splitImageId[2], // Note: splitImageId[3] === 'instances'
-        SOPInstanceUID: splitImageId[4],
-        frameNumber: splitImageId[6],
+        SOPInstanceUID: qs.objectUID,
+        frameNumber: qs.frameNumber,
       };
     } else if (imageId.includes('?requestType=WADO')) {
       const qs = queryString.parse(imageId);
