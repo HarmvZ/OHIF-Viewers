@@ -105,6 +105,7 @@ function PanelStudyBrowserTracking({
           description: qidoStudy.StudyDescription,
           modalities: qidoStudy.ModalitiesInStudy,
           numInstances: qidoStudy.NumInstances,
+          curieStudyId: qidoStudy.CurieStudyId,
           // displaySets: []
         };
       });
@@ -391,6 +392,7 @@ function _mapDataSourceStudies(studies) {
       PatientName: study.patientName,
       StudyInstanceUID: study.studyInstanceUid,
       StudyTime: study.time,
+      CurieStudyId: study.curieStudyId,
     };
   });
 }
@@ -596,7 +598,10 @@ function _createStudyBrowserTabs(
     });
 
     // Add the "tab study" to the 'primary', 'recent', and/or 'all' tab group(s)
-    if (primaryStudyInstanceUIDs.includes(study.studyInstanceUid)) {
+    if (
+      primaryStudyInstanceUIDs.includes(study.studyInstanceUid) ||
+      primaryStudyInstanceUIDs.includes(study.curieStudyId)
+    ) {
       primaryStudies.push(tabStudy);
       allStudies.push(tabStudy);
     } else {
