@@ -434,16 +434,13 @@ class MetadataProvider {
       // };
 
       // custom uid stripping
-      const strippedImageId = imageId.split('/studies/')[1];
-      const splitImageId = strippedImageId.split('/');
-
       const qs = queryString.parse(imageId);
 
       return {
         StudyInstanceUID: qs.studyUID,
-        SeriesInstanceUID: splitImageId[2], // Note: splitImageId[3] === 'instances'
+        SeriesInstanceUID: qs.seriesUID,
         SOPInstanceUID: qs.objectUID,
-        frameNumber: qs.frameNumber,
+        frameNumber: qs.frameId,
       };
     } else if (imageId.includes('?requestType=WADO')) {
       const qs = queryString.parse(imageId);
