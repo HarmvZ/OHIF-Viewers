@@ -9,7 +9,7 @@ CONFIG_FILE=${SCRIPT_DIR}/platform/viewer/public/config/grandchallenge.js
 
 # Edit config and env files to contain correct production paths
 sed -i 's#PUBLIC_URL=/[^\n]*#PUBLIC_URL=/thispathwillbereplaced/#gi' "$ENV_FILE"
-sed -i "s#routerBasename: [^,]*#routerBasename: '/curie/ohif/'#gi" "$CONFIG_FILE"
+sed -i "s#routerBasename: [^,]*#routerBasename: '/healthlake/ohif/'#gi" "$CONFIG_FILE"
 sed -i "s#window.DICOMWEB_BASE_URL = [^\n]*#window.DICOMWEB_BASE_URL = '/';#gi" "$CONFIG_FILE"
 
 (cd $SCRIPT_DIR; yarn run build) # Build deployment files
