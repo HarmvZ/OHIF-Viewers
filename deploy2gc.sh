@@ -24,11 +24,9 @@ sed -i "s#window.DICOMWEB_BASE_URL = [^\n]*#window.DICOMWEB_BASE_URL = 'https://
 # Create html template file with django templated static urls
 echo "{% load static %}" > $GC_TEMPLATE_FILE
 sed -r 's/(["'\''])\/thispathwillbereplaced\/([^"'\'']*)\1/\1{% static "js\/ohif\/\2" %}\1/gi' ${DIST_DIR}/index.html >> $GC_TEMPLATE_FILE
+sed -r -i 's/src=(["'\''])\{% static (["'\''])([^"'\'']*)\2 %\}\1/src="\/static\/\3"/gi' $GC_TEMPLATE_FILE
 
 # Replace public path with static url in other dist js files
-# for file in ${GC_SCRIPT_DIR}/sw.js; do
-  # sed -i "s#'/thispathwillbereplaced/#window.PUBLIC_URL + '#gi" "$file"
-# done
 for file in ${GC_SCRIPT_DIR}/*.js; do
   sed -i 's#thispathwillbereplaced#static/js/ohif#gi' "$file"
 done
