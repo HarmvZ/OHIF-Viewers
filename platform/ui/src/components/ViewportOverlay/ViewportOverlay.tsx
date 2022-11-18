@@ -11,7 +11,7 @@ const ViewportOverlay = props => {
   const overlay = 'absolute pointer-events-none';
 
   return (
-    <div className="text-primary-light">
+    <div className="text-white">
       <div
         data-cy={'viewport-overlay-top-left'}
         className={classnames(overlay, topLeft)}
