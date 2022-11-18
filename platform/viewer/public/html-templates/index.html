@@ -68,11 +68,12 @@
     src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2CObject.values%2CArray.prototype.flat%2CObject.entries%2CSymbol%2CArray.prototype.includes%2CString.prototype.repeat%2CArray.prototype.find"></script>!-->
   <script type="text/javascript">
     window.PUBLIC_URL = '<%= PUBLIC_URL %>';
+    window.WHITELABEL_VALUES = { homeUrl: "{% url 'home' %}", logoUrl: "{% static 'images/radboudshield-dark.svg' %}", siteName: "{{ request.site.name }}" };
   </script>
   <script rel="preload" as="script" type="text/javascript" src="<%= PUBLIC_URL %>app-config.js"></script>
   <script rel="preload" as="script" type="module" src="<%= PUBLIC_URL %>init-service-worker.js"></script>
 
-  <title>OHIF Viewer</title>
+  <title>{{ request.site.name }} Viewer</title>
 
   <!-- WEB FONTS -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

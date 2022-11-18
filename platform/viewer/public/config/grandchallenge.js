@@ -8,10 +8,19 @@ window.config = {
         {
           target: '_blank',
           rel: 'noopener noreferrer',
-          className: 'text-white underline',
-          href: 'http://grand-challenge.org',
+          className: 'text-white',
+          href: window.WHITELABEL_VALUES['homeUrl'],
         },
-        React.createElement('h5', {}, 'Grand Challenge OHIF')
+        React.createElement('img', {
+          src: window.WHITELABEL_VALUES['logoUrl'],
+          className: 'inline-block align-top',
+          style: { height: '30px' },
+        }),
+        React.createElement(
+          'h5',
+          { className: 'inline ml-2' },
+          window.WHITELABEL_VALUES['siteName']
+        )
       );
     },
   },
