@@ -33,16 +33,16 @@ module.exports = {
       },
 
       primary: {
-        light: '#5acce6',
-        main: '#0944b3',
-        dark: '#090c29',
-        active: '#348cfd',
+        light: '#5080b3', //'#85a8cb',
+        main: '#375a7f',
+        dark: '#222222',
+        active: '#ffffff',
       },
 
       secondary: {
-        light: '#3a3f99',
-        main: '#2b166b',
-        dark: '#041c4a',
+        light: '#999999',
+        main: '#444444',
+        dark: '#303030',
         active: '#1f1f27',
       },
 
@@ -132,7 +132,7 @@ module.exports = {
       blue: {
         100: '#ebf8ff',
         200: '#bee3f8',
-        300: '#90cdf4',
+        300: '#fff', //'#3498db', //'#999999', //'#90cdf4',
         400: '#63b3ed',
         500: '#4299e1',
         600: '#3182ce',
