@@ -60,7 +60,7 @@
 }
 .scroll .scroll-holder .imageSlider::-webkit-slider-thumb {
   -webkit-appearance: none !important;
-  background-color: #163239;
+  background-color: #333333;
   border: none;
   border-radius: 57px;
   cursor: -webkit-grab;
@@ -73,7 +73,7 @@
   cursor: -webkit-grabbing;
 }
 .scroll .scroll-holder .imageSlider::-moz-range-thumb {
-  background-color: #163239;
+  background-color: #333333;
   border: none;
   border-radius: 57px;
   cursor: -moz-grab;
@@ -82,11 +82,11 @@
   z-index: 7;
 }
 .scroll .scroll-holder .imageSlider::-moz-range-thumb:active {
-  background-color: #20a5d6;
+  background-color: #3498db;
   cursor: -moz-grabbing;
 }
 .scroll .scroll-holder .imageSlider::-ms-thumb {
-  background-color: #163239;
+  background-color: #333333;
   border: none;
   border-radius: 57px;
   cursor: ns-resize;

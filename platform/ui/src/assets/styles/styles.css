@@ -1,6 +1,6 @@
 /* CUSTOM OHIF SCROLLBAR */
 .ohif-scrollbar {
-  scrollbar-color: #3E5967 transparent;
+  scrollbar-color: #5e5e5e transparent;
   scrollbar-gutter: stable;
 }
 
@@ -19,12 +19,12 @@
 .ohif-scrollbar::-webkit-scrollbar-thumb {
   @apply rounded;
   @apply bg-primary-main;
-  background-color: #3e5967;
+  background-color: #5e5e5e;
 }
 
 .ohif-scrollbar::-webkit-scrollbar-thumb:window-inactive {
   @apply bg-primary-main;
-  background-color: #3e5967;
+  background-color: #5e5e5e;
 }
 
 /* INVISIBLE SCROLLBAR */
