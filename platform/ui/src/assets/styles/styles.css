@@ -9,7 +9,7 @@
 }
 
 .ohif-scrollbar::-webkit-scrollbar {
-  @apply w-2;
+  width: 8px;
 }
 
 .ohif-scrollbar::-webkit-scrollbar-track {
